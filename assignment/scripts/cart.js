@@ -23,7 +23,38 @@ return false;
 
     } else {
         cart.push(item) // Adds a new item into the array
+        return true;
     }
+}
+
+// console log tests
+console.log ('adding oranges', addItem ('oranges'));
+console.log ('adding grapes', addItem('grapes'));
+console.log ('adding apples', addItem ('apples'));
+
+//list item function
+
+function listItems() {
+for (item of cart) {
+console.log (item);
+}
+}
+console.log (`my cart has ${cart}`) // how to see if the item got listed correctly
+
+function empty () {
+    basket = [];
+}
+
+function removeItem (item) {
+for (let i=0 ; i< cart.length; i ++) {
+    if (cart.indexOf (item)=== i) {
+cart.splice (i,0:)
+
+
+    }
+}
+
+
 
 
 
@@ -31,3 +62,6 @@ return false;
 
 
 }
+
+
+
