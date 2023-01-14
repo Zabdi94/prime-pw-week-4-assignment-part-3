@@ -2,57 +2,69 @@ console.log('***** Cart Functions *****');
 // Make sure to test all functions here in the JS file!
 // We want to see how you are testing your code!!!
 
-// created cart and added item function
-let  cart = [];
+// created basket and added item function
+let basket = [];
+console.log(basket.length);
 const maxItems = 5;
 
 function isFull() {
-if (cart.length < maxItems) {
-    return false; } else {
+    if (basket.length < maxItems) {
+        return false;
+    } else {
         return true;
     }
 
 }
 
-console.log ('cart')
+console.log('basket')
 
 function addItem(item) {
-    if (isFull() ===true ) {
-console.log('your cart is full!');
-return false;
+    if (isFull() === true) {
+        console.log('your basket is full!');
+        return false;
 
     } else {
-        cart.push(item) // Adds a new item into the array
+        basket.push(item) // Adds a new item into the array
         return true;
     }
 }
 
 // console log tests
-console.log ('adding oranges', addItem ('oranges'));
-console.log ('adding grapes', addItem('grapes'));
-console.log ('adding apples', addItem ('apples'));
+console.log('adding oranges', addItem('oranges'));
+console.log('adding grapes', addItem('grapes'));
+console.log('adding apples', addItem('apples'));
 
 //list item function
 
 function listItems() {
-for (item of cart) {
-console.log (item);
+    for (item of basket) {
+        console.log(item);
+    }
 }
-}
-console.log (`my cart has ${cart}`) // how to see if the item got listed correctly
+console.log(`my basket has ${basket}`) // how to see if the item got listed correctly
 
-function empty () {
+function empty() {
     basket = [];
 }
 
-function removeItem (item) {
-for (let i=0 ; i< cart.length; i ++) {
-    if (cart.indexOf (item)=== i) {
-cart.splice (i,0:)
+function itemsListed(item) {
+    for (let i = 0; i < basket.length; i++) {
+        if (basket.indexOf(item) === i) {
+            basket.splice(i, 0);
+            return item;
+        } else {
+            return null;
+        }
 
 
     }
 }
+//Removing Items
+console.log(itemsListed('oranges'));
+console.log(itemsListed('grapes'));
+
+console.log('this will remove all the items in the cart', empty()); // removes items from cart
+console.log(`basket is now ${basket}`); //now you check if the items were emptied
 
 
 
@@ -61,7 +73,8 @@ cart.splice (i,0:)
 
 
 
-}
+
+
 
 
 
